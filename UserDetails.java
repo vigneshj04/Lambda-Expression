@@ -18,6 +18,13 @@ public class UserDetails {
         };
         System.out.println(validateFirstName.validate("Rajesh"));
 
-
+        UserInterface validateLastName = (lastName) -> {
+            if (lastName.isEmpty()) {
+                throw new CustomException("Invalid input");
+            }
+            Pattern pattern = Pattern.compile("^[A-Z][a-z]{3,}$");
+            return pattern.matcher(lastName).matches();
+        };
+        System.out.println(validateLastName.validate("Kumar"));
     }
 }
