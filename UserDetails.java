@@ -44,5 +44,14 @@ public class UserDetails {
             return pattern.matcher(mobNo).matches();
         };
         System.out.println(validateMobNo.validate("9832473212"));
+
+        UserInterface validatePassword = (password) -> {
+            if (password.isEmpty()) {
+                throw new CustomException("Invalid input");
+            }
+            Pattern pattern = Pattern.compile("^[a-zA-Z0-9]{8,}$");
+            return pattern.matcher(password).matches();
+        };
+        System.out.println(validatePassword.validate("TamilNadu@22"));
     }
 }
