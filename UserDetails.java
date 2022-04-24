@@ -49,7 +49,7 @@ public class UserDetails {
             if (password.isEmpty()) {
                 throw new CustomException("Invalid input");
             }
-            Pattern pattern = Pattern.compile("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$");
+            Pattern pattern = Pattern.compile("(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]*[@#$%_!^&*][0-9a-zA-Z]*");
             return pattern.matcher(password).matches();
         };
         System.out.println(validatePassword.validate("TamilNadu@22"));
