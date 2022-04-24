@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class ValidateEntry {
 
     public boolean firstName(String inputStr1) {
-        String namePattern = "^[A-Z]{1}[a-z]{3,9}$";
+        String namePattern = "^[A-Z][a-z]{3,9}$";
         Pattern regex = Pattern.compile(namePattern);
         Matcher firstNameMatcher = regex.matcher(inputStr1);
 
