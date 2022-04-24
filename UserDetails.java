@@ -35,5 +35,14 @@ public class UserDetails {
             return pattern.matcher(email).matches();
         };
         System.out.println(validateEmail.validate("Abc.123@gmail.com"));
+
+        UserInterface validateMobNo = (mobNo) -> {
+            if (mobNo.isEmpty()) {
+                throw new CustomException("Invalid input");
+            }
+            Pattern pattern = Pattern.compile("^[0-9]{2}\s[6-9][0-9]{9}$");
+            return pattern.matcher(mobNo).matches();
+        };
+        System.out.println(validateMobNo.validate("9832473212"));
     }
 }
